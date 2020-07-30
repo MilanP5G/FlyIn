@@ -51,8 +51,9 @@ body {
 #country-form {
   position: fixed;
   top: 0;
-  /* margin: auto;
-  padding: 25px 5px 5px 5px; */
+  z-index: 9;
+  margin: center;
+  padding: 25px 5px 5px 5px;
 }
 
 .header {
@@ -61,6 +62,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9;
   box-shadow: 13px 13px 20px #cbced1
 }
 .header a {

@@ -3,7 +3,7 @@ const BASE_URL = "http://localhost:3000/"
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries()
   addCountry()
-  // chosenCountry()
+  // chooseCountry()
 })
 
 function fetchCountries(){
@@ -60,6 +60,11 @@ function addCountrySubmit(){
 }
 
 // function chooseCountry() {
+//   e.preventDefault()
 //   let countryCard = document.getElementById('swipe-wrap')
 //   countryCard.addEventListener('click', chosenCountry)
+// }
+//
+// function chosenCountry() {
+//
 // }
