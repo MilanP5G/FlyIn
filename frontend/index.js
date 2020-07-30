@@ -11,7 +11,7 @@ function fetchCountries(){
   .then(resp => resp.json())
   .then(countries => {
     for (const country of countries){
-      let cntry = new Country(country.id, country.name, country.image)
+      let cntry = new Country(country.id, country.name, country.image_url)
       cntry.renderCountry()
     }
   })
@@ -23,37 +23,37 @@ function addCountry(){
   form.innerHTML +=
   `
   <form class="form-section" id="country-form" action="index.html" method="post">
-   <input type="text" id="c-name" placeholder="Country">
-   <input type="text" id="c-image" placeholder="Image address">
+   <input type="text" name="name" id="c-name" placeholder="Country">
+   <input type="file" name="image" id="c-image" accept="image/*">
    <input type="submit">
   </form>
   `
   form.addEventListener("submit", addCountrySubmit)
 }
 
-function addCountrySubmit(){
+function addCountrySubmit(event){
   event.preventDefault()
-  let countryName = document.getElementById('c-name').value
-  let countryImage = document.getElementById('c-image').value
+  // let countryName = document.getElementById('c-name').value
+  // let countryImage = document.getElementById('c-image').value
+  let formData = new FormData(event.target)
 
 
-  let country = {
-    name: countryName,
-    image: countryImage
-  }
+  // let country = {
+  //   name: countryName,
+  //   image: countryImage
+  // }
 
   fetch(`${BASE_URL}/countries`, {
 
     method: "POST",
     headers: {
-      "Content-type": "application/json",
       "Accept": "application/json"
     },
-    body: JSON.stringify(country)
+    body: formData
   })
   .then(resp => resp.json())
   .then(country => {
-    let cntry = new Country(country.id, country.name, country.image)
+    let cntry = new Country(country.id, country.name, country.image_url)
     cntry.renderCountry()
   })
 

@@ -5,7 +5,8 @@ class CountriesController < ApplicationController
   def index
     @countries = Country.all
 
-    render json: @countries
+    render json: @countries, methods: [:image_url]
+
   end
 
   # GET /countries/1
@@ -15,10 +16,11 @@ class CountriesController < ApplicationController
 
   # POST /countries
   def create
+    # binding.pry
     @country = Country.new(country_params)
 
     if @country.save
-      render json: @country, status: :created, location: @country
+      render json: @country, methods: [:image_url], status: :created, location: @country
     else
       render json: @country.errors, status: :unprocessable_entity
     end
@@ -46,6 +48,6 @@ class CountriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def country_params
-      params.require(:country).permit(:name, :image)
+      params.permit(:name, :image)
     end
 end
