@@ -11,9 +11,9 @@ class CountriesController < ApplicationController
 
   # GET /countries/1
   def show
-    binding.pry
+    # binding.pry
     country = Country.find(params[:id])
-    render json: country, includes: 
+    render json: country, includes: [:places]
   end
 
   # POST /countries
@@ -39,7 +39,8 @@ class CountriesController < ApplicationController
 
   # DELETE /countries/1
   def destroy
-    @country.destroy
+    country = Country.find(params[:id])
+    country.destroy
   end
 
   private

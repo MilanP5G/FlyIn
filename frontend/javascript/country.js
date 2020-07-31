@@ -13,7 +13,7 @@ renderCountry() {
   let button = document.createElement('button')
   button.classList.add('dlte-btn')
   button.dataset.id = this.id
-  button.addEventListener("click", deleteCountry)
+  button.addEventListener("click", Country.deleteCountry)
   button.innerHTML = "<b>X</b>"
   let card = document.createElement('div')
   card.classList.add('card')
@@ -27,10 +27,9 @@ renderCountry() {
     } else {
       id = e.target.parentElement.id
     }
-    fetch (`${BASE_URL}/countries/${id}`
-      
-
-    )
+    fetch (`${BASE_URL}/countries/${id}`)
+    .then(resp => resp.json())
+    .then(country => Country.countryShowPage(country))
   })
   let countryName = document.createElement('h3')
   countryName.innerText = this.name
@@ -47,20 +46,36 @@ renderCountry() {
   swiper.appendChild(card)
   countryWrapper.appendChild(swiper)
 
+  }
 
-  // countryWrapper.innerHTML +=
-  // `
-  // <div class="swiper-slide">
-  // <button class="dlte-btn" data-id=${this.id} onclick="deleteCountry()" ><b>X</b></button>
-  // <div class="card" id="card">
-  //   <div class="sliderText" id="sliderText">
-  //     <h3>${this.name}</h3>
-  //   </div>
-  //   <div class="content" id="img-content">
-  //     <img src=${this.image}>
-  //   </div>
-  // </div>
-  // </div>
-  // `
+  static countryShowPage(object) {
+    console.log(object)
+    let container = document.querySelector('.swiper-container')
+    container.style.display = "none"
+    let countrySP = document.createElement('div')
+    countrySP.id = object.id
+    countrySP.classList.add('country-sp')
+    let heading = document.createElement('h1')
+    heading.classList.add('country-name')
+    heading.innerText = object.name
+    countrySP.appendChild(heading)
+    document.body.appendChild(countrySP)
+  }
+
+  static deleteCountry(event) {
+
+     let id = null
+     if (event.target.classList.contains('dlte-btn')) {
+       id = parseInt(event.target.dataset.id)
+     } else {
+       id = parseInt(event.target.parentElement.dataset.id)
+     }
+
+     fetch(`${BASE_URL}/countries/${id}`, {
+       method: "DELETE"
+     })
+     .then(resp => resp.json())
+
+     document.location.reload()
   }
 }
