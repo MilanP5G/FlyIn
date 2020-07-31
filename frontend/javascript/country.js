@@ -12,6 +12,7 @@ renderCountry() {
   `
   <div class="swiper-slide">
   <div class="card" id="card">
+  <button class="dlte-btn" data-id=${this.id} onclick="deleteCountry()" >X</button>
     <div class="sliderText" id="sliderText">
       <h3>${this.name}</h3>
     </div>

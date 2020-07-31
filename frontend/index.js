@@ -59,12 +59,12 @@ function addCountrySubmit(event){
 
 }
 
-// function chooseCountry() {
-//   e.preventDefault()
-//   let countryCard = document.getElementById('swipe-wrap')
-//   countryCard.addEventListener('click', chosenCountry)
-// }
-//
-// function chosenCountry() {
-//
-// }
+function deleteCountry() {
+   let countryId = parseInt(event.target.dataset.id)
+
+   fetch(`${BASE_URL}/countries/${countryId}`, {
+     method: "DELETE"
+   })
+
+   this.location.reload()
+}
