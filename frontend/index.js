@@ -3,7 +3,6 @@ const BASE_URL = "http://localhost:3000/"
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries()
   addCountry()
-  // chooseCountry()
 })
 
 function fetchCountries(){

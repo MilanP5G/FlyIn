@@ -11,7 +11,9 @@ class CountriesController < ApplicationController
 
   # GET /countries/1
   def show
-    render json: @country
+    binding.pry
+    country = Country.find(params[:id])
+    render json: country, includes: 
   end
 
   # POST /countries

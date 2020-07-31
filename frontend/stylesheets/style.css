@@ -22,9 +22,19 @@ body {
 .content img {
   display: inline-block;
   object-fit: cover;
+  position: relative;
   width: 400px;
   height: 300px;
   border-radius: 0 0 10px 10px;
+}
+.content img::after {
+  content:'';
+  background-image: inherit;
+  width:inherit;
+  height:40%;
+  position: absolute;
+  bottom:-41%;
+  transform: scaleY(-1);
 }
 .card .sliderText {
    position: relative;
