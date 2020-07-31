@@ -11,7 +11,7 @@ body {
 
 .card {
   position: relative;
-  background: #fff;
+  background: #ecf0f3;
   width: 400px;
   height: 500px;
   margin: 0 auto;
@@ -103,6 +103,17 @@ body {
   .header-right {
     float: none;
   }
+}
+
+.dlte-btn {
+  right: -375px;
+  position: relative;
+  background-color: #a63d08;
+  border-radius: 20px;
+  border-style: none;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* #c-name input {
