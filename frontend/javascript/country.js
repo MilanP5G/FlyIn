@@ -11,7 +11,7 @@ renderCountry() {
   countryWrapper.innerHTML +=
   `
   <div class="swiper-slide">
-  <button class="dlte-btn" data-id=${this.id} onclick="deleteCountry()" >X</button>
+  <button class="dlte-btn" data-id=${this.id} onclick="deleteCountry()" ><b>X</b></button>
   <div class="card" id="card">
     <div class="sliderText" id="sliderText">
       <h3>${this.name}</h3>
