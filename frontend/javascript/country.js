@@ -1,5 +1,5 @@
 class Country {
-  constructor(id, name, image){
+  constructor(id, name, image, place){
     this.id = id
     this.name = name
     this.image = image
@@ -62,7 +62,8 @@ renderCountry() {
     heading.innerText = object.name
     countrySP.appendChild(heading)
     document.body.appendChild(countrySP)
-  }
+    }
+
 
   static deleteCountry(event) {
 
@@ -80,4 +81,6 @@ renderCountry() {
 
      document.location.reload()
   }
+
+
 }

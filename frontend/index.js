@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:3000"
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries()
   addCountry()
+  goHome()
 })
 
 function fetchCountries(){
@@ -59,4 +60,10 @@ function deleteCountry() {
    })
 
    this.location.reload()
+}
+
+function goHome() {
+  let mainLogo =  document.getElementById('main-logo').addEventListener("click", () => {
+    this.location.reload()
+  })
 }

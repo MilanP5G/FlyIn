@@ -6,23 +6,34 @@ class Place {
     this.country_id = country_id
   }
 
-renderPlace() {
-  let placeWrapper = document.getElementById('swipe-wrap')
+  renderPlace() {
+    let placeWrapper = document.getElementById('swipe-wrap')
 
-  placeWrapper.innerHTML +=
-  `
-  <div class="swiper-slide">
-  <div class="card">
-    <div class="sliderText" id="sliderText">
-      <h3>${this.name}</h3>
-    </div>
-    <div class="content" id="img-content">
-      <img src=${this.image}>
-      <h3>${this.description}</h3>
-    </div>
-  </div>
-  </div>
-  `
-  }
+    let swiper = document.createElement('div')
+    swiper.classList.add('swiper-slide')
+    let button = document.createElement('button')
+    button.classList.add('dlte-btn')
+    button.dataset.id = this.id
+    button.addEventListener("click", Place.deletePlace)
+    button.innerHTML = "<b>X</b>"
+    let card = document.createElement('div')
+    card.classList.add('card')
+    let slider = document.createElement('div')
+    let placeName = document.createElement('h3')
+    placeName.innerText = this.name
+    let content = document.createElement('div')
+    content.classList.add('content')
+    let image = document.createElement('img')
+    image.src = this.image
+
+    slider.appendChild(placeName)
+    content.appendChild(image)
+    card.appendChild(slider)
+    card.appendChild(content)
+    swiper.appendChild(button)
+    swiper.appendChild(card)
+    placeWrapper.appendChild(swiper)
+
+    }
 
 }
