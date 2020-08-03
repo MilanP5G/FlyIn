@@ -52,6 +52,8 @@ renderCountry() {
     console.log(object)
     let container = document.querySelector('.swiper-container')
     container.style.display = "none"
+    let form = document.querySelector('.form-section')
+    form.style.display = "none"
     let countrySP = document.createElement('div')
     countrySP.id = object.id
     countrySP.classList.add('country-sp')

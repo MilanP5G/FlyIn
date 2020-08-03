@@ -32,15 +32,8 @@ function addCountry(){
 
 function addCountrySubmit(event){
   event.preventDefault()
-  // let countryName = document.getElementById('c-name').value
-  // let countryImage = document.getElementById('c-image').value
   let formData = new FormData(event.target)
 
-
-  // let country = {
-  //   name: countryName,
-  //   image: countryImage
-  // }
 
   fetch(`${BASE_URL}/countries`, {
 
