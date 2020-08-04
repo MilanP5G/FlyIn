@@ -81,5 +81,5 @@ function newPlace() {
   </form>
   `
   document.body.appendChild(placeForm)
-  placeForm.addEventListener("submit", addPlaceSubmit)
+  // placeForm.addEventListener("submit", addPlaceSubmit)
 }
