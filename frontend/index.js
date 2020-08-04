@@ -67,3 +67,7 @@ function goHome() {
     this.location.reload()
   })
 }
+
+function placeCards() {
+  fetchPlaces()
+}

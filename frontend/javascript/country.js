@@ -1,5 +1,5 @@
 class Country {
-  constructor(id, name, image, place){
+  constructor(id, name, image){
     this.id = id
     this.name = name
     this.image = image
@@ -62,6 +62,12 @@ renderCountry() {
     heading.innerText = object.name
     countrySP.appendChild(heading)
     document.body.appendChild(countrySP)
+    let addBtn = document.createElement('button')
+    addBtn.classList.add('place-button')
+    addBtn.innerText = "Add Place"
+    let header = document.getElementById('cont-header')
+    header.appendChild(addBtn)
+
     }
 
 

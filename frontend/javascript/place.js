@@ -36,4 +36,15 @@ class Place {
 
     }
 
+    fetchPlaces(){
+      fetch(`${BASE_URL}/places`)
+      .then(resp => resp.json())
+      .then(places => {
+        for (const place of places){
+          let plce = new Place(place.id, place.name, place.image_url, place.description)
+          plce.renderPlace()
+        }
+      })
+    }
+
 }

@@ -133,6 +133,12 @@ body {
   z-index: 9;
 }
 
+.place-button {
+  float: right;
+  margin-top: 35px;
+  margin-right: 30px;
+}
+
 /* #c-name input {
   width: 505px;
   border: none;
