@@ -6,9 +6,7 @@ class Place {
     this.country_id = country_id
   }
 
-  newPlace() {
-    
-  }
+  
 
   renderPlace() {
     let placeWrapper = document.getElementById('swipe-wrap')

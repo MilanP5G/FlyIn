@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
 
-    render json: @places
+    render json: @places, methods: [:image_url]
   end
 
   # GET /places/1
@@ -15,12 +15,15 @@ class PlacesController < ApplicationController
 
   # POST /places
   def create
-    @place = Place.new(place_params)
+    place = Place.new(place_params)
+    country = Country.find(params[:countryId])
+    place.country = country
+    binding.pry
 
-    if @place.save
-      render json: @place, status: :created, location: @place
+    if place.save
+      render json: place, methods: [:image_url], status: :created, location: place
     else
-      render json: @place.errors, status: :unprocessable_entity
+      render json: place.errors, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +49,6 @@ class PlacesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def place_params
-      params.require(:place).permit(:name, :image, :description)
+      params.permit(:name, :image, :description)
     end
 end

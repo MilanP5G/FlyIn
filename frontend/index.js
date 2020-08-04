@@ -22,7 +22,7 @@ function addCountry(){
 
   form.innerHTML +=
   `
-  <form class="form-section" id="country-form" action="index.html" method="post">
+  <form enctype="multipart/form-data" class="form-section" id="country-form" action="index.html" method="post">
    <input type="text" name="name" id="c-name" placeholder="Country">
    <input type="file" name="image" id="c-image" accept="image/*">
    <input type="submit">
@@ -69,18 +69,43 @@ function goHome() {
 }
 
 function newPlace() {
-  let placeForm = document.createElement('div')
-  placeForm.classList.add("placeForm-div")
+  let placeForm = document.querySelector(".placeForm-div")
 
+  if (placeForm.childElementCount === 0) {
+
+  placeForm.style.display = "block"
   placeForm.innerHTML +=
   `
-  <form class="place-form" id="form-place" action="index.html" method="post">
+  <form enctype="multipart/form-data" class="place-form" id="form-place" action="index.html" method="post">
    <input type="text" name="name" id="p-name" placeholder="Place name">
    <input type="text" name="description" id="p-desc" placeholder="Articulate your experience...">
    <input type="file" name="image" id="p-image" accept="image/*">
    <input type="submit">
   </form>
   `
-  document.body.appendChild(placeForm)
-  // placeForm.addEventListener("submit", addPlaceSubmit)
+  placeForm.addEventListener("submit", addPlaceSubmit)
+  }
+}
+
+function addPlaceSubmit(event) {
+  event.preventDefault()
+  let formData = new FormData(event.target)
+  let countryId = document.querySelector('.country-sp').id
+  console.log(countryId)
+  formData.append("countryId", countryId)
+
+  fetch(`${BASE_URL}/places`, {
+
+    method: "POST",
+    headers: {
+      "Accept": "application/json"
+    },
+    body: formData
+
+  })
+  .then(resp => resp.json())
+  .then(place => {
+    let plce = new Place(place.name, place.image_url, place.description, place.country_id)
+    plce.renderPlace()
+  })
 }

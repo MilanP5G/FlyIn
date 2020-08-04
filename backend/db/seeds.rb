@@ -11,4 +11,4 @@ Country.create(name: "India", image: "https://img.traveltriangle.com/blog/wp-con
 Country.create(name: "Brazil", image: "https://www.internationaltaxreview.com/Media/images/international-tax-review/anjana-haines/july-2019/rio-de-janeiro-630%20x%20570.jpg")
 
 
-Place.create(country_id: 5, name: "Vrindavan", description: "This is the spiritual world on Earth! A truly devotional place to visit!")
+# Place.create(name: "Vrindavan", description: "This is the spiritual world on Earth! A truly devotional place to visit!", country_id: 5)
