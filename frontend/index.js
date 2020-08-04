@@ -69,7 +69,8 @@ function goHome() {
 }
 
 function newPlace() {
-  let placeForm = document.createElement('form')
+  let placeForm = document.createElement('div')
+  placeForm.classList.add("placeForm-div")
 
   placeForm.innerHTML +=
   `
