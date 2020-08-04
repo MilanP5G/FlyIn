@@ -68,6 +68,18 @@ function goHome() {
   })
 }
 
-function placeCards() {
-  fetchPlaces()
+function newPlace() {
+  let placeForm = document.createElement('form')
+
+  placeForm.innerHTML +=
+  `
+  <form class="place-form" id="form-place" action="index.html" method="post">
+   <input type="text" name="name" id="p-name" placeholder="Place name">
+   <input type="text" name="description" id="p-desc" placeholder="Articulate your experience...">
+   <input type="file" name="image" id="p-image" accept="image/*">
+   <input type="submit">
+  </form>
+  `
+  document.body.appendChild(placeForm)
+  placeForm.addEventListener("submit", addPlaceSubmit)
 }

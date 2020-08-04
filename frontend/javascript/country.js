@@ -67,6 +67,9 @@ renderCountry() {
     addBtn.innerText = "Add Place"
     let header = document.getElementById('cont-header')
     header.appendChild(addBtn)
+    addBtn.addEventListener("click", () => {
+      newPlace()
+    })
 
     }
 
