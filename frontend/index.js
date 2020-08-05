@@ -73,7 +73,7 @@ function fetchPlaces(){
   .then(resp => resp.json())
   .then(places => {
     for (const place of places){
-      let plce = new Place(place.id, place.name, place.image_url, place.description)
+      let plce = new Place(place.id, place.name, place.image_url, place.description, place.country_id)
       plce.renderPlace()
     }
   })
@@ -97,15 +97,14 @@ function newPlace() {
    <input type="submit">
   </form>
   `
-  placeForm.addEventListener("submit", Country.countryShowPage(object))
-  }
+  placeForm.addEventListener("submit", addPlaceSubmit)
+ }
 }
 
 function addPlaceSubmit(event) {
   event.preventDefault()
   let formData = new FormData(event.target)
   let countryId = document.querySelector('.country-sp').id
-  console.log(countryId)
   formData.append("countryId", countryId)
 
   fetch(`${BASE_URL}/places`, {
@@ -120,7 +119,8 @@ function addPlaceSubmit(event) {
   .then(resp => resp.json())
   .then(place => {
     let plce = new Place(place.name, place.image_url, place.description, place.country_id)
-    plce.fetchPlaces()
-    plce.renderPlace()
+    // plce.fetchPlaces()
+    // plce.renderPlace()
+    Country.countryShowPage
   })
 }

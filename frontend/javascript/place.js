@@ -7,22 +7,11 @@ class Place {
     this.country_id = country_id
   }
 
-  fetchPlaces(){
-    fetch(`${BASE_URL}/places`)
-    .then(resp => resp.json())
-    .then(places => {
-      for (const place of places){
-        let plce = new Place(place.id, place.name, place.image_url, place.description)
-        plce.renderPlace()
-      }
-    })
-  }
-
 
   renderPlace() {
-    let form = document.querySelector('.place-form')
-    // form.style.display = "none"
+    let countryId = document.querySelector('.country-sp').id
 
+    if (this.country_id == countryId) {
     let placeWrapper = document.createElement('swiper-wrap')
     placeWrapper.classList.add('swipe-wrap')
     let swiper = document.createElement('div')
@@ -42,6 +31,7 @@ class Place {
     let image = document.createElement('img')
     image.src = this.image
 
+
     slider.appendChild(placeName)
     content.appendChild(image)
     card.appendChild(slider)
@@ -50,6 +40,9 @@ class Place {
     swiper.appendChild(card)
     placeWrapper.appendChild(swiper)
     document.body.append(placeWrapper)
+
+     }
+
 
     }
 
@@ -67,7 +60,7 @@ class Place {
        })
        .then(resp => resp.json())
 
-
+       location.reload()
     }
 
 }

@@ -71,7 +71,7 @@ renderCountry() {
     })
     fetchPlaces()
 
-    }
+  }
 
 
   static deleteCountry(event) {
