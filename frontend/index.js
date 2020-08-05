@@ -22,7 +22,7 @@ function addCountry(){
 
   form.innerHTML +=
   `
-  <form enctype="multipart/form-data" class="form-section" id="country-form" action="index.html" method="post">
+  <form class="form-section" id="country-form" action="index.html" method="post">
    <input type="text" name="name" id="c-name" placeholder="Country">
    <input type="file" name="image" id="c-image" accept="image/*">
    <input type="submit">
@@ -76,7 +76,7 @@ function newPlace() {
   placeForm.style.display = "block"
   placeForm.innerHTML +=
   `
-  <form enctype="multipart/form-data" class="place-form" id="form-place" action="index.html" method="post">
+  <form class="place-form" id="form-place" action="index.html" method="post">
    <input type="text" name="name" id="p-name" placeholder="Place name">
    <input type="text" name="description" id="p-desc" placeholder="Articulate your experience...">
    <input type="file" name="image" id="p-image" accept="image/*">

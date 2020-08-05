@@ -143,6 +143,66 @@ body {
   display: none;
 }
 
+.plce-card {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+}
+.plce-card .plce-content {
+  width: 400px;
+  box-sizing: border-box;
+}
+.plce-content img {
+  display: inline-block;
+  object-fit: cover;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border-radius: 0 0 10px 10px;
+}
+/* .plce-content img::after {
+  content:'';
+  background-image: inherit;
+  width:inherit;
+  height:40%;
+  position: absolute;
+  bottom:-41%;
+  transform: scaleY(-1);
+} */
+.plce-card .sliderText {
+   position: relative;
+   width: 100%;
+   height: 200px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #000;
+   border-radius: 10px 10px 0 0;
+}
+.plce-card .sliderText h3 {
+  color: #fff;
+  font-size: 3em;
+}
+.swipe-slide {
+  margin-top: 150px;
+  width: 400px;
+}
+.swipe-slide .sliderText {
+  background: #f9ac85;
+}
+
+.dlte-plce {
+  right: -375px;
+  position: relative;
+  background-color: #a63d08;
+  border-radius: 20px;
+  border-style: none;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+}
+
 /* #c-name input {
   width: 505px;
   border: none;

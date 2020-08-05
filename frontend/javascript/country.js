@@ -49,7 +49,6 @@ renderCountry() {
   }
 
   static countryShowPage(object) {
-    console.log(object)
     let container = document.querySelector('.swiper-container')
     container.style.display = "none"
     let form = document.querySelector('.form-section')

@@ -18,7 +18,6 @@ class PlacesController < ApplicationController
     place = Place.new(place_params)
     country = Country.find(params[:countryId])
     place.country = country
-    binding.pry
 
     if place.save
       render json: place, methods: [:image_url], status: :created, location: place
