@@ -7,13 +7,24 @@ class Place {
     this.country_id = country_id
   }
 
+  fetchPlaces(){
+    fetch(`${BASE_URL}/places`)
+    .then(resp => resp.json())
+    .then(places => {
+      for (const place of places){
+        let plce = new Place(place.id, place.name, place.image_url, place.description)
+        plce.renderPlace()
+      }
+    })
+  }
+
 
   renderPlace() {
     let form = document.querySelector('.place-form')
-    form.style.display = "none"
+    // form.style.display = "none"
 
     let placeWrapper = document.createElement('swiper-wrap')
-
+    placeWrapper.classList.add('swipe-wrap')
     let swiper = document.createElement('div')
     swiper.classList.add('swipe-slide')
     let button = document.createElement('button')
@@ -42,8 +53,8 @@ class Place {
 
     }
 
-    static deleteCountry(event) {
-
+    static deletePlace(event) {
+      event.preventDefault()
        let id = null
        if (event.target.classList.contains('dlte-plce')) {
          id = parseInt(event.target.dataset.id)
@@ -56,18 +67,7 @@ class Place {
        })
        .then(resp => resp.json())
 
-       document.location.reload()
-    }
 
-    fetchPlaces(){
-      fetch(`${BASE_URL}/places`)
-      .then(resp => resp.json())
-      .then(places => {
-        for (const place of places){
-          let plce = new Place(place.id, place.name, place.image_url, place.description)
-          plce.renderPlace()
-        }
-      })
     }
 
 }

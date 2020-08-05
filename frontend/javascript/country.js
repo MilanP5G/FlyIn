@@ -69,6 +69,7 @@ renderCountry() {
     addBtn.addEventListener("click", () => {
       newPlace()
     })
+    fetchPlaces()
 
     }
 

@@ -68,7 +68,21 @@ function goHome() {
   })
 }
 
+function fetchPlaces(){
+  fetch(`${BASE_URL}/places`)
+  .then(resp => resp.json())
+  .then(places => {
+    for (const place of places){
+      let plce = new Place(place.id, place.name, place.image_url, place.description)
+      plce.renderPlace()
+    }
+  })
+}
+
 function newPlace() {
+  let swiper = document.querySelectorAll(".swipe-wrap")
+  for (let i = 0; i < swiper.length; i++)
+    swiper[i].style.display = "none"
   let placeForm = document.querySelector(".placeForm-div")
 
   if (placeForm.childElementCount === 0) {
@@ -83,7 +97,7 @@ function newPlace() {
    <input type="submit">
   </form>
   `
-  placeForm.addEventListener("submit", addPlaceSubmit)
+  placeForm.addEventListener("submit", Country.countryShowPage(object))
   }
 }
 
@@ -106,6 +120,7 @@ function addPlaceSubmit(event) {
   .then(resp => resp.json())
   .then(place => {
     let plce = new Place(place.name, place.image_url, place.description, place.country_id)
+    plce.fetchPlaces()
     plce.renderPlace()
   })
 }
