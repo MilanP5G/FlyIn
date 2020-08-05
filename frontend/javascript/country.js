@@ -64,6 +64,8 @@ renderCountry() {
     let addBtn = document.createElement('button')
     addBtn.classList.add('place-button')
     addBtn.innerText = "Add Place"
+    let swiper = document.querySelector('.swipe-slide')
+    // console.log(swiper)
     let header = document.getElementById('cont-header')
     header.appendChild(addBtn)
     addBtn.addEventListener("click", () => {

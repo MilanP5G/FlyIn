@@ -58,9 +58,10 @@ class Place {
        fetch(`${BASE_URL}/places/${id}`, {
          method: "DELETE"
        })
-       .then(resp => resp.json())
 
-       location.reload()
+
+       event.target.nextElementSibling.remove()
+       event.target.remove()
     }
 
 }

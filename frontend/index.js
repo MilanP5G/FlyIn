@@ -118,9 +118,9 @@ function addPlaceSubmit(event) {
   })
   .then(resp => resp.json())
   .then(place => {
-    let plce = new Place(place.name, place.image_url, place.description, place.country_id)
+    let plce = new Place(place.id, place.name, place.image_url, place.description, place.country_id)
     // plce.fetchPlaces()
-    // plce.renderPlace()
-    Country.countryShowPage
+    plce.renderPlace()
+    // Country.countryShowPage(plce)
   })
 }
