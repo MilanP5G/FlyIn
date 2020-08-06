@@ -3,6 +3,8 @@ let swiper = new Swiper('.swiper-container', {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: 'auto',
+  observer: true,
+  observeParents: true,
   coverflowEffect: {
     rotate: 30,
     stretch: 0,
