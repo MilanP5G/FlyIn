@@ -48,6 +48,7 @@ function addCountrySubmit(event){
   .then(country => {
     let cntry = new Country(country.id, country.name, country.image_url)
     cntry.renderCountry()
+    swiper.update()
   })
 
 }

@@ -7,7 +7,6 @@ class Country {
 
 renderCountry() {
   let countryWrapper = document.getElementById('swipe-wrap')
-
   let swiper = document.createElement('div')
   swiper.classList.add('swiper-slide')
   let button = document.createElement('button')
