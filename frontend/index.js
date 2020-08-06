@@ -22,9 +22,9 @@ function addCountry(){
 
   form.innerHTML +=
   `
-  <form class="form-section" id="country-form" action="index.html" method="post">
+  <form class="form-section" id="cntry-form" action="index.html" method="post">
    <input type="text" name="name" id="c-name" placeholder="Country">
-   <input type="file" name="image" id="c-image" accept="image/*">
+   <input type="file" name="image" class="cntry-img" id="c-image" accept="image/*">
    <input type="submit">
   </form>
   `

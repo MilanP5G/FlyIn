@@ -32,12 +32,18 @@ class Place {
     content.classList.add('plce-content')
     let image = document.createElement('img')
     image.src = this.image
+    let desc = document.createElement('div')
+    desc.classList.add('plce-desc')
+    let descCont = document.createElement('p')
+    descCont.innerText = this.description
 
 
     placeSlider.appendChild(placeName)
     content.appendChild(image)
+    desc.appendChild(descCont)
     card.appendChild(placeSlider)
     card.appendChild(content)
+    card.appendChild(desc)
     swiper.appendChild(button)
     swiper.appendChild(card)
     placeWrapper.appendChild(swiper)
