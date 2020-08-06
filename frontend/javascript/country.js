@@ -59,8 +59,7 @@ renderCountry() {
     let heading = document.createElement('h1')
     heading.classList.add('country-name')
     heading.innerText = object.name
-    countrySP.appendChild(heading)
-    document.body.appendChild(countrySP)
+
     let addBtn = document.createElement('button')
     addBtn.classList.add('place-button')
     addBtn.innerText = "Add Place"
@@ -68,6 +67,8 @@ renderCountry() {
     // console.log(swiper)
     let header = document.getElementById('cont-header')
     header.appendChild(addBtn)
+    countrySP.appendChild(heading)
+    header.appendChild(countrySP)
     addBtn.addEventListener("click", () => {
       newPlace()
     })

@@ -128,9 +128,7 @@ body {
 }
 
 .country-sp {
-  position: relative;
-  top: -310px;
-  z-index: 9;
+  text-align: center;
 }
 
 .place-button {
@@ -170,7 +168,7 @@ body {
   bottom:-41%;
   transform: scaleY(-1);
 } */
-.plce-card .sliderText {
+.plce-card .plce-sliderText {
    position: relative;
    width: 100%;
    height: 200px;
@@ -180,7 +178,7 @@ body {
    background: #000;
    border-radius: 10px 10px 0 0;
 }
-.plce-card .sliderText h3 {
+.plce-card .plce-sliderText h3 {
   color: #fff;
   font-size: 3em;
 }
@@ -188,7 +186,7 @@ body {
   margin-top: 150px;
   width: 400px;
 }
-.swipe-slide .sliderText {
+.swipe-slide .plce-sliderText {
   background: #f9ac85;
 }
 

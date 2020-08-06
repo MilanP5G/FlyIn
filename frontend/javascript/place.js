@@ -23,7 +23,9 @@ class Place {
     button.innerHTML = "<b>X</b>"
     let card = document.createElement('div')
     card.classList.add('plce-card')
-    let slider = document.createElement('div')
+    let placeSlider = document.createElement('div')
+    placeSlider.classList.add('plce-sliderText')
+    placeSlider.id = this.id
     let placeName = document.createElement('h3')
     placeName.innerText = this.name
     let content = document.createElement('div')
@@ -32,9 +34,9 @@ class Place {
     image.src = this.image
 
 
-    slider.appendChild(placeName)
+    placeSlider.appendChild(placeName)
     content.appendChild(image)
-    card.appendChild(slider)
+    card.appendChild(placeSlider)
     card.appendChild(content)
     swiper.appendChild(button)
     swiper.appendChild(card)
@@ -58,7 +60,6 @@ class Place {
        fetch(`${BASE_URL}/places/${id}`, {
          method: "DELETE"
        })
-
 
        event.target.nextElementSibling.remove()
        event.target.remove()
