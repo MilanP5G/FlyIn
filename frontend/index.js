@@ -86,6 +86,7 @@ function newPlace() {
   for (let i = 0; i < swiper.length; i++)
     swiper[i].style.display = "none"
   let placeForm = document.querySelector(".placeForm-div")
+  placeForm.style.display = "block"
 
   if (placeForm.childElementCount === 0) {
 
@@ -108,6 +109,7 @@ function addPlaceSubmit(event) {
   let formData = new FormData(event.target)
   let countryId = document.querySelector('.country-sp').id
   formData.append("countryId", countryId)
+  document.getElementById('form-place').reset()
 
   fetch(`${BASE_URL}/places`, {
 
