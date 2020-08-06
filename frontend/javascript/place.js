@@ -49,7 +49,6 @@ class Place {
     }
 
     static deletePlace(event) {
-      event.preventDefault()
        let id = null
        if (event.target.classList.contains('dlte-plce')) {
          id = parseInt(event.target.dataset.id)
@@ -62,6 +61,7 @@ class Place {
        })
 
        event.target.nextElementSibling.remove()
+       event.target.parentElement.remove()
        event.target.remove()
     }
 
