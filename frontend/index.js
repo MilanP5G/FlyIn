@@ -24,7 +24,7 @@ function addCountry(){
   `
   <form class="form-section" id="cntry-form" action="index.html" method="post">
    <input type="text" name="name" id="c-name" placeholder="Country">
-   <input type="file" name="image" class="cntry-img" id="file" accept="image/*" data-multiple-caption="{count} files selected" multiple/>
+   <input type="file" name="image" class="cntry-img" id="file" accept="image/*">
    <label for="file" id="upld-img">Upload Image</label>
    <input type="submit" class="submit-cntry-img">
   </form>
@@ -97,9 +97,17 @@ function newPlace() {
   `
   <form class="place-form" id="form-place" action="index.html" method="post">
    <input type="text" name="name" id="p-name" placeholder="Place name">
-   <input type="text" name="description" id="p-desc" placeholder="Articulate your experience...">
-   <input type="file" name="image" id="p-image" accept="image/*">
-   <input type="submit">
+   <br>
+   <textarea name="description" id="p-desc" placeholder="Articulate your experience..."></textarea>
+   <br>
+   </br>
+   <br>
+   <input type="file" name="image" id="p-image" class="plce-img" accept="image/*">
+   <label for="file" id="upld-plce">Upload Image</label>
+   <br>
+   </br>
+   <br>
+   <input type="submit" class="submit-plce-img">
   </form>
   `
   placeForm.addEventListener("submit", addPlaceSubmit)

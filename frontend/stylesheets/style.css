@@ -86,28 +86,9 @@ body {
 #c-image {
   padding: 12px;
 }
-/* .cntry-img {
-  outline: none;
-  border :none;
-  cursor: pointer;
-  z-index: 9;
-  border-radius: 30px;
-  font-size: 20px;
-  font-weight: 700;
-  font-family: 'Lato', sans-serif;
-  color: #fff;
-  text-align: center;
-  background: #cf5d16;
-  box-shadow: 3px 3px 8px #b1b1b1,
-             -3px -3px 8px #ffffff;
-  transition: 0.5s;
+.country-name {
+  margin: 32px 0 30px;
 }
-.cntry-img:hover {
-  background: #fd711a
-}
-.cntry-img:active {
-  background: #cf5d16
-} */
 .cntry-img {
 	width: 0.1px;
 	height: 0.1px;
@@ -120,6 +101,7 @@ body {
     color: white;
     background-color: #18b5ae;
     height: 50px;
+    border-style: groove;
     padding: 15px 30px;
     width: 200px;
     z-index: 9;
@@ -145,7 +127,7 @@ body {
   background-color: #f9ac85;
   height: 50px;
   padding: 15px 10px;
-  z-index: 9;
+  border-style: groove;
   cursor: pointer;
   border-radius: 30px;
   font-size: 20px;
@@ -155,6 +137,9 @@ body {
   box-shadow: 3px 3px 8px #b1b1b1,
              -3px -3px 8px #ffffff;
   transition: 0.3s;
+}
+.form-section {
+  margin-left: 30px;
 }
 .header {
   overflow: hidden;
@@ -222,14 +207,111 @@ body {
 
 .place-button {
   float: right;
-  margin-top: 35px;
+  margin-top: 25px;
   margin-right: 30px;
+  color: white;
+  background-color: #18b5ae;
+  height: 50px;
+  padding: 12px 30px 20px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.3s;
 }
-
+.place-button:focus + label,
+.place-button + label:hover {
+    background-color: #f9ac85;
+}
 .placeForm-div {
   display: none;
 }
-
+.place-form {
+  width: 505px
+}
+.place-form #p-name {
+  width: 500px;
+  border: none;
+  outline: none;
+  background: none;
+  padding: none;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #555;
+  border-radius: 25px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;
+}
+.place-form #p-desc {
+  width: 500px;
+  height: 150px;
+  border: none;
+  outline: none;
+  background: none;
+  padding: none;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #555;
+  border-radius: 25px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;
+}
+.plce-img {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: relative;
+	z-index: -1;
+}
+.plce-img + label {
+    color: white;
+    background-color: #18b5ae;
+    height: 50px;
+    border-style: groove;
+    padding: 15px 30px;
+    width: 200px;
+    z-index: 9;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    box-shadow: 3px 3px 8px #b1b1b1,
+               -3px -3px 8px #ffffff;
+    transition: 0.3s;
+}
+.plce-img:focus + label,
+.plce-img + label:hover {
+    background-color: #f9ac85;
+}
+.plce-img + label {
+	cursor: pointer; /* "hand" cursor */
+}
+.submit-plce-img {
+  color: white;
+  background-color: #f9ac85;
+  height: 50px;
+  padding: 2px 62px 1px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.3s;
+}
 .plce-card {
   position: relative;
   width: 400px;
@@ -299,18 +381,3 @@ body {
   font-size: 1em;
   font-family: 'Poppins', sans-serif;
 }
-
-/* #c-name input {
-  width: 505px;
-  border: none;
-  outline: none;
-  background: none;
-  padding: none;
-  margin-top: 30px;
-  font-size: 18px;
-  color: #555;
-  border-radius: 25px;
-  padding: 20px 20px 20px 20px;
-  box-shadow: inset 8px 8px 8px #cbced1,
-              inset -8px -8px 8px #ffffff;
-} */
