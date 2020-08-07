@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
 
   # GET /countries
   def index
-    @countries = Country.all_new
+    @countries = Country.all
 
     render json: @countries, methods: [:image_url]
 

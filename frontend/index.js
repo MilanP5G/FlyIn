@@ -48,8 +48,10 @@ function addCountrySubmit(event){
   .then(resp => resp.json())
   .then(country => {
     let cntry = new Country(country.id, country.name, country.image_url)
+    if (Country) {
     cntry.renderCountry()
     swiper.update()
+   }
   })
 
 }
