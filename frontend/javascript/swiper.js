@@ -10,7 +10,7 @@ let swiper = new Swiper('.swiper-container', {
     stretch: 0,
     depth: 200,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: true
   },
   pagination: {
     el: '.swiper-pagination',
