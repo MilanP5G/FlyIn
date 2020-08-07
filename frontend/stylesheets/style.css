@@ -120,7 +120,7 @@ body {
     color: white;
     background-color: #18b5ae;
     height: 50px;
-    padding: 15px 40px;
+    padding: 15px 30px;
     width: 200px;
     z-index: 9;
     cursor: pointer;
@@ -139,6 +139,22 @@ body {
 }
 .cntry-img + label {
 	cursor: pointer; /* "hand" cursor */
+}
+.submit-cntry-img {
+  color: white;
+  background-color: #f9ac85;
+  height: 50px;
+  padding: 15px 10px;
+  z-index: 9;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  box-shadow: 3px 3px 8px #b1b1b1,
+             -3px -3px 8px #ffffff;
+  transition: 0.3s;
 }
 .header {
   overflow: hidden;
