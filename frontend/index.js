@@ -103,7 +103,6 @@ function newPlace() {
    </br>
    <br>
    <input type="file" name="image" id="p-image" class="plce-img" accept="image/*">
-   <label for="file" id="upld-plce">Upload Image</label>
    <br>
    </br>
    <br>
