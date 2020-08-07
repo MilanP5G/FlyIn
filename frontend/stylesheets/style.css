@@ -86,10 +86,11 @@ body {
 #c-image {
   padding: 12px;
 }
-.cntry-img {
+/* .cntry-img {
   outline: none;
   border :none;
   cursor: pointer;
+  z-index: 9;
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
@@ -106,20 +107,39 @@ body {
 }
 .cntry-img:active {
   background: #cf5d16
+} */
+.cntry-img {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: relative;
+	z-index: -1;
 }
-#file-upload-button input {
-  position: relative;
-  top: -5px;
-  font-size: 20px;
-  margin: 15px;
-  font-weight: 700;
-  font-family: 'Lato', sans-serif;
-  color: #fff;
-  background: none;
-  border: none;
-  outline: none;
+.cntry-img + label {
+    color: white;
+    background-color: #18b5ae;
+    height: 50px;
+    padding: 15px 40px;
+    width: 200px;
+    z-index: 9;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    box-shadow: 3px 3px 8px #b1b1b1,
+               -3px -3px 8px #ffffff;
+    transition: 0.3s;
 }
-
+.cntry-img:focus + label,
+.cntry-img + label:hover {
+    background-color: #f9ac85;
+}
+.cntry-img + label {
+	cursor: pointer; /* "hand" cursor */
+}
 .header {
   overflow: hidden;
   background-color: #ecf0f3;

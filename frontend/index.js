@@ -24,7 +24,8 @@ function addCountry(){
   `
   <form class="form-section" id="cntry-form" action="index.html" method="post">
    <input type="text" name="name" id="c-name" placeholder="Country">
-   <input type="file" name="image" class="cntry-img" id="c-image" accept="image/*">
+   <input type="file" name="image" class="cntry-img" id="file" accept="image/*" data-multiple-caption="{count} files selected" multiple/>
+   <label for="file" id="upld-img">Upload Image</label>
    <input type="submit">
   </form>
   `
