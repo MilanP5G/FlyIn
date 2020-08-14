@@ -1,4 +1,4 @@
-This is a Sinatra application called Medivation that allows you to create an account and share meditative and/or motivational posts.
+This is a JavaScript application called FlyIn that allows you to create Country cards and Place cards for each country.
 
 ## Installation
 Fork and clone this repo. In the terminal, cd into the backend ```cd backend``` and then run ```rails s```. Next, you will need to open another terminal and cd into the frontend ```cd frontend``` and then run ```open index.html```.
