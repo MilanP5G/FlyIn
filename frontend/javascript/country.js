@@ -3,7 +3,10 @@ class Country {
     this.id = id
     this.name = name
     this.image = image
+    Country.allCountries.push(this)
   }
+
+static allCountries = []
 
 renderCountry() {
   let countryWrapper = document.getElementById('swipe-wrap')

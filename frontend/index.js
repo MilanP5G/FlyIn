@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:3000"
 document.addEventListener("DOMContentLoaded", () => {
   fetchCountries()
   addCountry()
+  alphabetizeCountries()
   goHome()
 })
 
@@ -136,4 +137,36 @@ function addPlaceSubmit(event) {
     let plce = new Place(place.id, place.name, place.image_url, place.description, place.country_id)
     fetchPlaces()
   })
+}
+
+function alphabetizeCountries() {
+  let header = document.getElementById('cont-header')
+
+  let alphButton = document.createElement('button')
+  alphButton.innerHTML = "Alphabetize"
+
+  header.appendChild(alphButton)
+
+  alphButton.addEventListener("click", sortedCountries)
+
+}
+
+function sortedCountries() {
+  Country.allCountries.sort(function(a, b) {
+    let cntryNameA = a.name
+    let cntryNameB = b.name
+    if (cntryNameA < cntryNameB) {
+      return -1
+    } else {
+      return 1
+    }
+  })
+
+  let container = document.querySelector('.swiper-wrapper')
+  container.innerHTML = ""
+
+  for (const country of Country.allCountries){
+    country.renderCountry()
+  }
+
 }
